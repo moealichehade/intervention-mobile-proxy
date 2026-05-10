@@ -52,4 +52,4 @@ app.use('/notion', async (req, res) => {
 
 app.get('/health', (req, res) => res.json({ status: 'ok', port: 3001 }));
 app.use(express.static(path.join(process.env.HOME, 'Documents/moe-dashboards/intervention-dashboard')));
-app.listen(3001, () => console.log('Proxy running at http://localhost:3001'));
+app.listen(process.env.PORT || 3001, () => console.log('Proxy running at http://localhost:3001'));
